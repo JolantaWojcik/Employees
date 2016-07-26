@@ -14,8 +14,9 @@ public class Main {
 		employee.forEach(System.out::println);
 		
 		EmployeeService es = new EmployeeService();
-		String company = "HSBC";
 		
+		//roboczo to wyswietlania nazwy firmy
+		String company = "HSBC";
 		List <Employee> fromTheSameComapny = es.getAllFromCompany(company, employee);
 		System.out.println("All employees of company " + company + " are: "+ fromTheSameComapny);
 		
@@ -29,7 +30,11 @@ public class Main {
 		double avarageSalaryOfComapny = es.averageSalaryForPosition(position, employee);
 		System.out.println("Avarage salary for position " + position +" is: "+ avarageSalaryOfComapny);
 	
+		List<String >companies = es.getAllCompanies(employee);
+		System.out.println("Set of companies " + companies);
 		
+		List<String >positions = es.getAllPosition(employee);
+		System.out.println("Set of positions" + positions);
 	}
 
 }

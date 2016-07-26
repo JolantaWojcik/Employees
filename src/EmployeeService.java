@@ -22,20 +22,16 @@ public class EmployeeService {
 		return source.stream().collect(Collectors.maxBy((a, b) -> (int) a.getSalary()- (int) b.getSalary())).get();
 	}
 	
-	public List<String> getAllCompanies(Set<String> source){
-		source.forEach(System.out::println);
-		return null;
-		//Set<String> cities = persons.stream().map(p -> p.getCity()).collect(Collectors.toSet());
-		//cities.forEach(System.out::println);
-		//return source.stream().filter(c -> c.getCompany().equals(company)).collect(Collectors.toList());
+	public List<String> getAllCompanies(List<Employee> source){
+		Set<String> companies = source.stream().map(p -> p.getCompany()).collect(Collectors.toSet());
+		return companies.stream().collect(Collectors.toList());
 		
 	}
 	
 	//	Set<String> names = new HashSet<>(); //LinkedHashSet, TreeSet
-	public List<String> getAllPosition(Set<String> source){
-		source.forEach(System.out::println);
-		return null;
-		//return source.stream().filter(c -> c.getCompany().equals(company)).collect(Collectors.toList());
+	public List<String> getAllPosition(List<Employee> source){
+		Set<String> positions = source.stream().map(p -> p.getPosition()).collect(Collectors.toSet());
+		return positions.stream().collect(Collectors.toList());
 	}
 	
 	public double avarageSalary(List<Employee> source){
