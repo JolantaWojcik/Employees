@@ -15,7 +15,7 @@ public class Main {
 		
 		EmployeeService es = new EmployeeService();
 		
-		//roboczo to wyswietlania nazwy firmy
+		//roboczo to wyswietlania nazwy firmy, realnie pewnie gety i sety
 		String company = "HSBC";
 		List <Employee> fromTheSameComapny = es.getAllFromCompany(company, employee);
 		System.out.println("All employees of company " + company + " are: "+ fromTheSameComapny);
@@ -26,6 +26,7 @@ public class Main {
 		double avarageSalary = es.avarageSalary(employee);
 		System.out.println("Avarage salary for all employees is: " + avarageSalary);
 		
+		//roboczo to wyswietlania nazwy stanowiska, realnie pewnie gety i sety
 		String position = "sales manager";
 		double avarageSalaryOfComapny = es.averageSalaryForPosition(position, employee);
 		System.out.println("Avarage salary for position " + position +" is: "+ avarageSalaryOfComapny);
